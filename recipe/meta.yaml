@@ -27,12 +27,10 @@ requirements:
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - pymt
     - hydrotrend 
 
 test:
   imports:
-    - pymt
     - pymt_hydrotrend
 
 about:
