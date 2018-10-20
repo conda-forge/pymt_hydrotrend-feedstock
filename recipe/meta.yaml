@@ -9,7 +9,7 @@ source:
   sha256: f41f6aecb71cd70febafb40483ec195c40e70f7c7e3f9e35844d40f8d19ad020
 
 build:
-  number: 0
+  number: 1000
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   skip: True  # [win]
 
@@ -27,12 +27,10 @@ requirements:
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - pymt
     - hydrotrend 
 
 test:
   imports:
-    - pymt
     - pymt_hydrotrend
 
 about:
