@@ -1,4 +1,4 @@
-{% set version = "0.1.1" %}
+{% set version = "0.1.2" %}
 
 package:
   name: pymt_hydrotrend
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/mcflugen/pymt_hydrotrend/archive/v{{ version }}.tar.gz
-  sha256: f41f6aecb71cd70febafb40483ec195c40e70f7c7e3f9e35844d40f8d19ad020
+  sha256: 9bcabd6f4b76bce0c6490a8824aeb266beba0858076b054cc31d8ccc5e663142
 
 build:
   number: 1000
