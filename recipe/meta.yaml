@@ -25,6 +25,7 @@ requirements:
 
   run:
     - python
+    - setuptools
     - {{ pin_compatible('numpy') }}
     - hydrotrend 
 
