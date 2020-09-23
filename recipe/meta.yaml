@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/mcflugen/pymt_hydrotrend/archive/v{{ version }}.tar.gz
-  sha256: 9bcabd6f4b76bce0c6490a8824aeb266beba0858076b054cc31d8ccc5e663142
+  sha256: bb42014b2e120ddc84096a25f386a50426515ecc1e73780b6550cfb3e52fb50d
 
 build:
   number: 1002
