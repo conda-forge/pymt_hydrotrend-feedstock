@@ -32,7 +32,7 @@ requirements:
 test:
   requires:
     - bmi-tester
-  imports:
+  commands:
     - bmi-test pymt_hydrotrend:Hydrotrend -vvv
 
 about:
