@@ -1,4 +1,4 @@
-{% set version = "0.1.2" %}
+{% set version = "0.2.1" %}
 
 package:
   name: pymt_hydrotrend
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://github.com/mcflugen/pymt_hydrotrend/archive/v{{ version }}.tar.gz
-  sha256: bb42014b2e120ddc84096a25f386a50426515ecc1e73780b6550cfb3e52fb50d
+  sha256: d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed
 
 build:
-  number: 1003
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
-  skip: True  # [win]
+  skip: True  # [win or py<37]
 
 requirements:
   build:
@@ -21,17 +21,19 @@ requirements:
     - pip
     - cython
     - numpy
-    - model_metadata
     - hydrotrend 
 
   run:
     - python
+    - setuptools
     - {{ pin_compatible('numpy') }}
     - hydrotrend 
 
 test:
+  requires:
+    - bmi-tester
   imports:
-    - pymt_hydrotrend
+    - bmi-test pymt_hydrotrend:Hydrotrend -vvv
 
 about:
   home: https://github.com/mcflugen/pymt_hydrotrend
