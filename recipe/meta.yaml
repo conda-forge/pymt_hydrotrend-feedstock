@@ -1,4 +1,4 @@
-{% set version = "0.2.1" %}
+{% set version = "0.2.2" %}
 
 package:
   name: pymt_hydrotrend
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://github.com/pymt-lab/pymt_hydrotrend/archive/v{{ version }}.tar.gz
-  sha256: a7ae4d88b44430ee946b8f30466747f2dec489456cef5b7d7693590744530543
+  sha256: 10716ad4970d457b424415e4d976aeb464b7a3e8304acab1835a7d7d3d9aaa09
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
-  skip: True  # [win or py<37]
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+  skip: true  # [win or py<37]
 
 requirements:
   build:
@@ -21,13 +21,13 @@ requirements:
     - pip
     - cython
     - numpy
-    - hydrotrend 
+    - hydrotrend
 
   run:
     - python
     - setuptools
     - {{ pin_compatible('numpy') }}
-    - hydrotrend 
+    - hydrotrend
 
 test:
   requires:
