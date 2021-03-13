@@ -19,7 +19,7 @@ requirements:
   host:
     - python
     - pip
-    - bmic
+    - bmi-c
     - cython
     - numpy
     - hydrotrend 
