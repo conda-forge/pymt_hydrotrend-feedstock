@@ -9,7 +9,7 @@ source:
   sha256: 10716ad4970d457b424415e4d976aeb464b7a3e8304acab1835a7d7d3d9aaa09
 
 build:
-  number: 3
+  number: 4
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   skip: True  # [win and vc<14]
 
@@ -20,6 +20,7 @@ requirements:
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - pip
@@ -31,7 +32,6 @@ requirements:
   run:
     - python
     - setuptools
-    - {{ pin_compatible('numpy') }}
     - hydrotrend 
 
 test:
